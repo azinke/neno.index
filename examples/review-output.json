@@ -1,0 +1,5 @@
+{
+  "summary": "The supplied change removes the zero-count guard.",
+  "findings": [{"severity": "medium", "location": "ratio.go:4", "issue": "Calling ratio with count == 0 now panics instead of returning 0.", "recommendation": "Restore the guard and add a regression case for zero count."}],
+  "gaps": ["This is a synthetic fixture; no code or tests were executed."]
+}

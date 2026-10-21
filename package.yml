@@ -1,0 +1,29 @@
+api: agents.yml/package/v1alpha1
+metadata:
+  name: neno-starters
+  version: 0.5.0
+  description: Reusable agents, procedural skills, instructions, workflows, and policy for Neno.
+spec:
+  exports:
+    planner: ./agents/planner.agent.yml
+    reviewer: ./agents/reviewer.agent.yml
+    debugger: ./agents/debugger.agent.yml
+    implementer: ./agents/implementer.agent.yml
+    writer: ./agents/writer.agent.yml
+    test-designer: ./agents/test-designer.agent.yml
+
+    skill-planning: ./instructions/planning.instruction.yml
+    skill-code-review: ./instructions/code-review.instruction.yml
+    skill-debugging: ./instructions/debugging.instruction.yml
+    skill-implementation: ./instructions/implementation.instruction.yml
+    skill-documentation: ./instructions/documentation.instruction.yml
+    skill-testing: ./instructions/testing.instruction.yml
+    evidence: ./instructions/evidence.instruction.yml
+    communication: ./instructions/communication.instruction.yml
+    untrusted-input: ./instructions/untrusted-input.instruction.yml
+
+    review-change: ./workflows/review-change.workflow.yml
+    plan-change: ./workflows/plan-change.workflow.yml
+    design-tests: ./workflows/design-tests.workflow.yml
+
+    starter-policy: ./policies/starter.policy.yml

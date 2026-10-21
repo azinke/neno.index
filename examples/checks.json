@@ -1,0 +1,5 @@
+[
+  {"workflow": "workflows/plan-change.workflow.yml", "inputs": "examples/plan-inputs.json", "output": "examples/plan-output.json"},
+  {"workflow": "workflows/review-change.workflow.yml", "inputs": "examples/review-inputs.json", "output": "examples/review-output.json"},
+  {"workflow": "workflows/design-tests.workflow.yml", "inputs": "examples/test-inputs.json", "output": "examples/test-output.json"}
+]

@@ -1,0 +1,6 @@
+{
+  "goal": "Add an optional HTTP client timeout while preserving the existing constructor.",
+  "steps": ["Inspect the constructor and client implementation before proposing an applicable patch.", "Choose an additive timeout configuration API consistent with the existing client."],
+  "validation": ["Verify existing constructor calls preserve their behavior.", "Verify configured timeouts terminate a delayed test-server request."],
+  "open-questions": ["The constructor implementation and existing test conventions were not supplied."]
+}

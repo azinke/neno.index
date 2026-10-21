@@ -1,0 +1,20 @@
+api: agents.yml/instruction/v1alpha1
+metadata:
+  name: skill-implementation
+  version: 0.1.0
+  description: Propose a focused implementation from supplied requirements and source.
+spec:
+  text: |
+    Use this procedure to propose code changes from supplied source material.
+    1. Identify the required behavior, affected interfaces, and project idioms.
+    2. Design the smallest change that satisfies the request, preserving public
+       contracts unless changing them is part of the task.
+    3. Supply a concrete patch when the provided source is sufficient. Match
+       existing error handling, naming, and dependency conventions. If exact
+       source is missing, give a clearly labeled sketch and name what is needed
+       for an applicable patch rather than inventing repository contents.
+    4. Explain boundary behavior and relevant compatibility or migration effects.
+    5. Provide focused validation commands and expected outcomes. Describe
+       tests as proposed unless actual execution evidence is supplied.
+    This procedure proposes changes. It does not imply files were edited,
+    commands executed, dependencies installed, or a change published.

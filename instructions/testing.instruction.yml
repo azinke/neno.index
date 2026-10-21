@@ -1,0 +1,22 @@
+api: agents.yml/instruction/v1alpha1
+metadata:
+  name: skill-testing
+  version: 0.1.0
+  description: Design regression tests from supplied requirements, source, and test conventions.
+spec:
+  text: |
+    Use this procedure when designing tests for a proposed change or defect.
+    1. Extract observable acceptance criteria and invariants from the supplied
+       requirements. Distinguish documented behavior from assumptions.
+    2. Identify failure modes introduced by the change. Prioritize regression
+       cases, boundaries, invalid input, and failure handling that apply.
+    3. For each case, specify setup, stimulus, expected behavior, and why the
+       case matters. State whether it should fail before the proposed fix.
+    4. Favor deterministic tests of public behavior. Use existing test tools
+       and conventions when supplied; identify missing source or interfaces
+       rather than inventing runnable test APIs. Avoid tests that merely copy
+       the implementation or require unnecessary live services.
+    5. Suggest a test layer and execution command only when supported by the
+       supplied context. Identify untested risks and any necessary manual checks.
+    Return prioritized test cases and explicit assumptions. Tests and commands
+    are proposals; do not claim that tests were written, executed, or passed.

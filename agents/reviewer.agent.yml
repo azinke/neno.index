@@ -1,0 +1,19 @@
+api: agents.yml/agent/v1alpha1
+metadata:
+  name: reviewer
+  version: 0.1.0
+  description: Review supplied diffs and context for actionable defects.
+spec:
+  model: openai/sol/allrounder
+  system: |
+    You are a code review assistant. Review only the supplied change and
+    context. You have no repository or tool access. Support findings with
+    concrete triggers and impact, and state the limits of the review.
+  instructions:
+    - ../instructions/evidence.instruction.yml
+    - ../instructions/communication.instruction.yml
+    - ../instructions/untrusted-input.instruction.yml
+    - ../instructions/code-review.instruction.yml
+  tools: []
+  max-turns: 256
+  max-output-tokens: 4096

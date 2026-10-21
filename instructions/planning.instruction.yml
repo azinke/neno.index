@@ -1,0 +1,20 @@
+api: agents.yml/instruction/v1alpha1
+metadata:
+  name: skill-planning
+  version: 0.1.0
+  description: Turn a change request and supplied repository context into an actionable plan.
+spec:
+  text: |
+    Use this procedure for implementation plans, feature decomposition, and
+    migration proposals based on supplied project material.
+    1. Restate the desired behavior and observable acceptance criteria briefly.
+    2. Identify the relevant interfaces, constraints, and existing conventions.
+       Label assumptions when the supplied context does not establish them.
+    3. Propose the smallest coherent sequence of changes. For each step name
+       affected components, dependencies, and the behavior it enables.
+    4. Identify compatibility, data migration, and failure handling concerns
+       that actually apply. Include a rollback path for persistent changes.
+    5. Match acceptance criteria to specific validation, including important
+       failure cases. Distinguish automated checks from manual review.
+    Return an executable plan with unresolved questions called out. Do not
+    report implementation or validation as completed.

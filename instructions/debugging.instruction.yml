@@ -1,0 +1,21 @@
+api: agents.yml/instruction/v1alpha1
+metadata:
+  name: skill-debugging
+  version: 0.1.0
+  description: Diagnose supplied failures using explicit hypotheses and discriminating checks.
+spec:
+  text: |
+    Use this procedure for a bug report with supplied logs, code, or reproduction.
+    1. Record expected behavior, actual behavior, reproduction conditions, and
+       the last known working state if available.
+    2. Separate direct observations from hypotheses. Trace the earliest
+       supported point where actual behavior diverges from the intended path.
+    3. Rank a small set of plausible causes. For each, propose a focused check
+       and explain which outcomes would confirm or weaken the hypothesis.
+    4. Recommend a minimal fix only as strongly as the evidence permits.
+       Avoid speculative rewrites and changes unrelated to the failure.
+    5. Propose a regression check reproducing the original failure and checks
+       for neighboring behavior affected by the fix.
+    Return the evidence, leading diagnosis, proposed fix, and verification
+    steps. When diagnosis is blocked, request the most discriminating missing
+    evidence instead of presenting a guess as an established root cause.

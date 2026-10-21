@@ -1,0 +1,4 @@
+{
+  "diff": "diff --git a/ratio.go b/ratio.go\n--- a/ratio.go\n+++ b/ratio.go\n@@ -1,5 +1,5 @@\n package example\n \n func ratio(total, count int) int {\n-    if count == 0 { return 0 }; return total / count\n+    return total / count\n }\n",
+  "context": "This is a synthetic Go example. Existing callers may pass count == 0; previously the function returned 0. No tests have been run."
+}

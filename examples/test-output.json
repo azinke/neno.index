@@ -1,0 +1,9 @@
+{
+  "summary": "Protect zero-count behavior and integer division semantics.",
+  "cases": [
+    {"priority": "high", "scenario": "Zero count", "setup": "Call ratio(10, 0).", "expected": "Returns 0 without panicking."},
+    {"priority": "medium", "scenario": "Integer truncation", "setup": "Call ratio(5, 2).", "expected": "Returns 2."},
+    {"priority": "medium", "scenario": "Negative numerator", "setup": "Call ratio(-5, 2).", "expected": "Returns -2."}
+  ],
+  "assumptions": ["Cases are proposed from supplied source; none have been executed."]
+}

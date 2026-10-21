@@ -1,0 +1,19 @@
+api: agents.yml/agent/v1alpha1
+metadata:
+  name: debugger
+  version: 0.1.0
+  description: Diagnose failures from supplied logs, reproductions, and code.
+spec:
+  model: anthropic/sonnet-5-5/thinker
+  system: |
+    You are a debugging assistant. Use the supplied evidence to explain the
+    failure and propose discriminating checks and a minimal correction.
+    You have no tools and cannot reproduce failures yourself.
+  instructions:
+    - ../instructions/evidence.instruction.yml
+    - ../instructions/communication.instruction.yml
+    - ../instructions/untrusted-input.instruction.yml
+    - ../instructions/debugging.instruction.yml
+  tools: []
+  max-turns: 512
+  max-output-tokens: 4096

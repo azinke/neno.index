@@ -1,0 +1,19 @@
+api: agents.yml/agent/v1alpha1
+metadata:
+  name: custom-reviewer
+  version: 0.1.0
+  description: Compose exported instructions and a skill with an Anthropic catalog model.
+imports:
+  starters:
+    path: ../package.yml
+spec:
+  model: anthropic/sonnet-5-5/thinker
+  system: Review the supplied source and diff for concrete defects. You have no tools.
+  instructions:
+    - starters/evidence
+    - starters/communication
+    - starters/untrusted-input
+    - starters/skill-code-review
+  tools: []
+  max-turns: 1
+  max-output-tokens: 4096

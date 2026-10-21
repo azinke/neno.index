@@ -1,0 +1,4 @@
+{
+  "request": "Design regression tests for an integer ratio function whose zero-count behavior must remain 0.",
+  "context": "Synthetic Go example: func ratio(total, count int) int { if count == 0 { return 0 }; return total / count }. Callers may supply positive, negative, or zero integers. The project uses Go's standard testing package; no tests have been executed."
+}

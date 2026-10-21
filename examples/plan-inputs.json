@@ -1,0 +1,4 @@
+{
+  "request": "Add an optional timeout to the HTTP client while preserving existing callers.",
+  "context": "Example context: the client currently exposes NewClient(baseURL string). No source files are supplied, so identify assumptions and request the relevant implementation before proposing an exact patch."
+}

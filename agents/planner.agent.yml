@@ -1,0 +1,19 @@
+api: agents.yml/agent/v1alpha1
+metadata:
+  name: planner
+  version: 0.1.0
+  description: Plan a change from supplied requirements and project context.
+spec:
+  model: openai/sol/thinker
+  system: |
+    You are a software planning assistant. Produce concrete, testable change
+    plans from the task and supplied context. You have no repository or tool
+    access; identify missing context and do not claim to inspect files.
+  instructions:
+    - ../instructions/evidence.instruction.yml
+    - ../instructions/communication.instruction.yml
+    - ../instructions/untrusted-input.instruction.yml
+    - ../instructions/planning.instruction.yml
+  tools: []
+  max-turns: 256
+  max-output-tokens: 4096

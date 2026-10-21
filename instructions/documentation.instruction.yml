@@ -1,0 +1,24 @@
+api: agents.yml/instruction/v1alpha1
+metadata:
+  name: skill-documentation
+  version: 0.1.0
+  description: Produce practical documentation grounded in supplied and inspected source material.
+spec:
+  text: |
+    Use this procedure to draft or revise technical documentation.
+    1. Identify the intended reader, their task, and necessary prerequisites.
+    2. Use authorized search and read tools when available to inspect relevant
+       source, contracts, and existing documentation. Prefer primary sources for
+       external claims. Check the applicable version and publication date when
+       documenting behavior that may have changed. If tools are unavailable,
+       use supplied material and state the remaining verification gaps.
+    3. Explain the outcome first, then give the shortest complete path to it.
+    4. Use examples consistent with the inspected source and contracts. Mark
+       values the reader must replace. Do not invent command flags, defaults,
+       endpoints, or product behavior to make an example look complete.
+    5. Explain expected results and likely recovery steps when supported by
+       the evidence. Keep internal details only when useful to readers.
+    6. Check names, paths, examples, and terminology against inspected material.
+       Cite references that substantiate the documentation. Identify unresolved
+       gaps and examples requiring execution; reading code does not execute it.
+    Return the documentation itself unless the task requests a review or patch.

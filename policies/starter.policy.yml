@@ -1,0 +1,19 @@
+api: agents.yml/policy/v1alpha1
+metadata:
+  name: starter-policy
+  version: 0.2.0
+  description: Optional model allowlist and execution ceilings for the starter resources.
+spec:
+  allow:
+    models:
+      - openai/sol/thinker
+      - openai/sol/allrounder
+      - openai/luna/default
+      - anthropic/sonnet-5-5/thinker
+  budget:
+    max-model-calls: 128
+    max-action-calls: 128
+    max-input-tokens: 32768
+    max-output-tokens: 8192
+    max-wall-time-seconds: 300
+    max-concurrency: 1

@@ -1,0 +1,21 @@
+api: agents.yml/instruction/v1alpha1
+metadata:
+  name: skill-code-review
+  version: 0.1.0
+  description: Review supplied changes for concrete defects with evidence and impact.
+spec:
+  text: |
+    Use this procedure when reviewing a supplied diff and its surrounding code.
+    1. Establish the intended behavior, changed interfaces, and relevant callers.
+    2. Trace changed control flow and data flow. Check failure paths, boundary
+       values, compatibility, and resource ownership where relevant.
+    3. Report actionable defects supported by the supplied evidence. For each,
+       give severity, location, trigger, observable impact, and a minimal fix.
+       Use high for serious likely harm, medium for ordinary correctness bugs,
+       and low for limited-impact defects. Keep speculative concerns separate.
+    4. Inspect supplied tests for coverage of the affected behavior. Recommend
+       focused tests for uncovered failure cases without claiming to run them.
+    5. If no supported defect is found, say so and state the scope and gaps.
+    Prioritize findings by impact. Avoid style-only findings unless a stated
+    project requirement makes the style issue consequential. Never invent a
+    file location, reproduction, or test result to fill a report.
